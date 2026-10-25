@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Promise Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#15203A">
+<link rel="icon" href="icon-192 (1).png">
+<link rel="apple-touch-icon" href="icon-512 (1).png">
+</head>
+<body>
+<main class="app">
+ <header>
+  <h1>Promise Finder</h1>
+  <div class="controls">
+    <label for="version" class="sr">Bible version</label>
+    <select id="version"></select>
+    <button id="mic" type="button" aria-pressed="false">Start listening</button>
+  </div>
+</header>
+
+  <p class="status" id="status" role="status"></p>
+
+  <section class="verse idle" id="top" aria-live="polite">
+    <p class="ref" id="topRef">No match yet</p>
+    <p class="text" id="topText">Start listening, or type a sentence below. The best matching verse will appear here.</p>
+    <p class="why" id="topWhy"></p>
+<div class="nav">
+  <button id="prev" type="button">Previous verse</button>
+  <button id="next" type="button">Next verse</button>
+  <button id="unpin" type="button" hidden>Back to automatic</button>
+</div>
+  </section>
+
+  <section>
+    <h2>Other possible matches</h2>
+    <ul id="others"></ul>
+  </section>
+
+  <section>
+    <h2>What I heard</h2>
+    <p class="heard" id="heard">Nothing yet.</p>
+  </section>
+
+  <section>
+    <label for="manual">Test without a microphone</label>
+    <input id="manual" type="text" placeholder="Example: do not be afraid, God is with you">
+  </section>
+</main>
+
+<script src="verses.js"></script>
+<script src="reference.js"></script>
+<script src="versions.js"></script>
+<script src="app.js"></script>
+<script src="next.js"></script>
+</body>
+</html>
